@@ -1,0 +1,94 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  background-color: black;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 120px);
+  grid-template-rows: repeat(6, 120px);
+  margin-top: 66px;
+  max-width: 410px;
+  grid-gap: 4px;
+  margin-left: 5px;
+}
+
+.box {
+  font-family: 'Luckiest Guy', cursive;
+  display: flex;
+  align-items: center;
+  padding: 0px 0px 5px 30px;
+  border-radius: 50%;
+}
+
+.container button,
+input {
+  width: 50px;
+  border-style: none;
+  background-color: transparent;
+  font-size: 42px;
+  text-align: center;
+  color: aliceblue;
+}
+
+.result {
+  /* background-color: #b0b0b0; */
+  grid-column: 1 /5;
+  border-radius: unset;
+  padding: unset;
+}
+
+.clear {
+  background-color: #b09000;
+  grid-column: 4;
+  padding-left: 11px;
+}
+
+.divsion {
+  background-color: orange;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.multiplay {
+  background-color: orange;
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.add {
+  background-color: orange;
+  grid-column: 3;
+  grid-row: 2;
+}
+
+.equal {
+  background-color: orange;
+  grid-column: 4;
+  grid-row: 5;
+}
+
+.minus {
+  background-color: orange;
+  grid-column: 4;
+  grid-row: 4;
+}
+
+.percent {
+  background-color: orange;
+  grid-column: 4;
+  grid-row: 3;
+}
+
+.zero {
+  background-color: #b09000;
+  grid-column: 2;
+}
+
+.number {
+  background-color: rgb(34, 33, 33);
+}
