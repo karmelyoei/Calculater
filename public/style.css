@@ -26,7 +26,7 @@ body {
 }
 
 .container button,
-input {
+p {
   width: 50px;
   border-style: none;
   background-color: transparent;
@@ -36,7 +36,6 @@ input {
 }
 
 .result {
-  /* background-color: #b0b0b0; */
   grid-column: 1 /5;
   border-radius: unset;
   padding: unset;
@@ -54,16 +53,16 @@ input {
   grid-row: 2;
 }
 
-.multiplay {
+.multiplaing {
   background-color: orange;
   grid-column: 2;
   grid-row: 2;
 }
 
-.add {
+.addition {
   background-color: orange;
-  grid-column: 3;
-  grid-row: 2;
+  grid-column: 4;
+  grid-row: 3;
 }
 
 .equal {
@@ -80,8 +79,8 @@ input {
 
 .percent {
   background-color: orange;
-  grid-column: 4;
-  grid-row: 3;
+  grid-column: 3;
+  grid-row: 2;
 }
 
 .zero {

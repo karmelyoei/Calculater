@@ -4,30 +4,47 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" type="text/css" href="style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Luckiest+Guy&display=swap"
+      rel="stylesheet"
+    />
     <title>Calculate your life!</title>
   </head>
   <body>
     <div class="container">
-      <div class="box result"><input type="text"></input></div>
-      <div class="box clear"><button>Clear</button></div>
-      <div class="box divsion"><button>/</button></div>
-      <div class="box multiplay"><button>*</button></div>
-      <div class="box add"><button>+</button></div>
-      <div class="box minus"><button>-</button></div>
-      <div class="box equal"><button>=</button></div>
-      <div class="box percent"><button>%</button></div>
-      <div class="box number"><button>1</button></div>
-      <div class="box number"><button>2</button></div>
-      <div class="box number"><button>3</button></div>
-      <div class="box number"><button>4</button></div>
-      <div class="box number"><button>5</button></div>
-      <div class="box number"><button>6</button></div>
-      <div class="box number"><button>7</button></div>
-      <div class="box number"><button>8</button></div>
-      <div class="box number"><button>9</button></div>
-      <div class="box zero"><button id='zero'>0</button></div>
+      <div class="box result"><p id="result">0</p></div>
+      <div class="box clear">
+        <button id="clear" data-action="clear">Clear</button>
+      </div>
+      <div class="box divsion">
+        <button class="keys" data-action="divide">/</button>
+      </div>
+      <div class="box multiplaing">
+        <button class="keys" data-action="multiply">*</button>
+      </div>
+      <div class="box addition">
+        <button class="keys" data-action="add">+</button>
+      </div>
+      <div class="box minus">
+        <button class="keys" data-action="subtract">-</button>
+      </div>
+      <div class="box equal">
+        <button id="equal" data-action="calculate">=</button>
+      </div>
+      <div class="box percent">
+        <button class="keys" data-action="module">%</button>
+      </div>
+      <div class="box number"><button class="keys">1</button></div>
+      <div class="box number"><button class="keys">2</button></div>
+      <div class="box number"><button class="keys">3</button></div>
+      <div class="box number"><button class="keys">4</button></div>
+      <div class="box number"><button class="keys">5</button></div>
+      <div class="box number"><button class="keys">6</button></div>
+      <div class="box number"><button class="keys">7</button></div>
+      <div class="box number"><button class="keys">8</button></div>
+      <div class="box number"><button class="keys">9</button></div>
+      <div class="box zero"><button class="keys">0</button></div>
     </div>
-    <srcipt href="code.js"></srcipt>
+    <script src="code.js"></script>
   </body>
 </html>
