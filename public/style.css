@@ -26,7 +26,7 @@ body {
 }
 
 .container button,
-p {
+h1 {
   width: 50px;
   border-style: none;
   background-color: transparent;
@@ -90,4 +90,8 @@ p {
 
 .number {
   background-color: rgb(34, 33, 33);
+}
+
+.is-depressed {
+  box-shadow: beige;
 }

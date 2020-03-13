@@ -16,13 +16,16 @@ let keys = document.querySelectorAll('.keys').forEach(element => {
       let action = key.dataset.action;
 
       if (action == undefined) {
+        Array.from(key.parentNode.children).forEach(k =>
+          k.classList.remove('is-depressed')
+        );
+
         if (displayedNumber == '0') {
           result.textContent = keyContent;
           displayedNumber = result.textContent;
         } else {
           result.textContent = displayedNumber + keyContent;
           displayedNumber = result.textContent;
-          calculator.secondNumber = displayedNumber;
         }
       } else {
         if (
@@ -31,24 +34,43 @@ let keys = document.querySelectorAll('.keys').forEach(element => {
           action === 'multiply' ||
           action === 'divide'
         ) {
+          {
+            key.classList.add('is-depressed');
+          }
+
           result.dataset.action = displayedNumber;
           calculator.firstNumber = result.dataset.action;
-          clearImmediate();
           calculator.operator = action;
+          clearImmediate();
+          result.textContent = calculator.firstNumber;
         }
       }
     }
   });
 });
 
-document.getElementById('equal').addEventListener('click', event => {
-  let n1 = calculator.firstNumber;
-  let operator = calculator.operator;
-  let n2 = calculator.secondNumber;
+let equal = document
+  .getElementById('equal')
+  .addEventListener('click', event => {
+    console.log(displayedNumber);
+    console.log('resultcontent', result.textContent);
+    let n1 = calculator.firstNumber;
+    let operator = calculator.operator;
+    let n2 = displayedNumber;
 
-  const finalResult = calculate(n1, operator, n2);
-  result.textContent = finalResult;
-});
+    let finalResult = '';
+    if (displayedNumber != 0) {
+      finalResult += calculate(n1, operator, n2);
+      result.textContent = finalResult;
+      displayedNumber = result.textContent;
+    } else {
+      finalResult = calculate(n1, operator, n2);
+      result.textContent = finalResult;
+      displayedNumber = result.textContent;
+    }
+
+    return finalResult;
+  });
 
 const calculate = (n1, operator, n2) => {
   let equals = '';
@@ -68,12 +90,14 @@ const calculate = (n1, operator, n2) => {
   return equals;
 };
 
-document.getElementById('clear').addEventListener('click', event => {
-  if (event.target.dataset.action == 'clear') {
-    clearImmediate();
-    result.textContent = '0';
-  }
-});
+let clear = document
+  .getElementById('clear')
+  .addEventListener('click', event => {
+    if (event.target.dataset.action == 'clear') {
+      clearImmediate();
+      result.textContent = '0';
+    }
+  });
 
 function clearImmediate() {
   result.textContent = '';
